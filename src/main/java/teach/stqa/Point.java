@@ -1,3 +1,5 @@
+package teach.stqa;
+
 import static java.lang.Math.sqrt;
 
 public class Point {
