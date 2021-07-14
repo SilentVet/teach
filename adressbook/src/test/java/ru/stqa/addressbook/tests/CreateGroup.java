@@ -2,7 +2,6 @@ package ru.stqa.addressbook.tests;
 
 import org.testng.annotations.*;
 import ru.stqa.addressbook.model.GroupData;
-import ru.stqa.addressbook.TestBase;
 
 
 public class CreateGroup extends TestBase {
