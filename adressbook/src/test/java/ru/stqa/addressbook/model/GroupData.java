@@ -1,9 +1,9 @@
 package ru.stqa.addressbook.model;
 
 public class GroupData {
-    private final String groupname;
-    private final String header;
-    private final String footer;
+    private String groupname;
+    private String header;
+    private String footer;
 
     public GroupData(String groupname, String header, String footer) {
         this.groupname = groupname;

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     private GroupHelper groupHelper;
+    private ContactHelper contactHelper;
     private NavigationHelper navigationHelper;
     private SessionHelper sessionHelper;
     protected StringBuffer verificationErrors = new StringBuffer();
@@ -20,6 +21,7 @@ public class ApplicationManager {
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);
+        contactHelper = new ContactHelper(driver);
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/");
@@ -59,5 +61,9 @@ public class ApplicationManager {
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }
