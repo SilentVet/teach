@@ -1,11 +1,17 @@
 package ru.stqa.addressbook.appmanager;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.remote.BrowserType.*;
+
 public class ApplicationManager {
+    private String browser;
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
     private NavigationHelper navigationHelper;
@@ -15,8 +21,22 @@ public class ApplicationManager {
     private boolean acceptNextAlert = true;
     WebDriver driver;
 
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
+
 
     public void init() {
+        if (browser.equals(FIREFOX)) {
+            driver = new FirefoxDriver();
+        }
+        else if (browser.equals(CHROME)) {
+            driver = new ChromeDriver();
+        }
+        else if (browser.equals(EDGE)) {
+            driver = new EdgeDriver();
+        }
+
         driver = new FirefoxDriver();
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
