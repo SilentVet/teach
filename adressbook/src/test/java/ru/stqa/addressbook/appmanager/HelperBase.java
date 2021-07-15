@@ -1,8 +1,6 @@
 package ru.stqa.addressbook.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 public class HelperBase {
     protected WebDriver driver;
@@ -33,4 +31,15 @@ public class HelperBase {
             return false;
         }
     }
-}
+
+        public boolean isElementPresent(By by) {
+            try {
+                driver.findElement(by);
+                return true;
+            }
+            catch (NoSuchElementException e) {
+                return false;
+            }
+        }
+        }
+
