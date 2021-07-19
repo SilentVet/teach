@@ -43,7 +43,7 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(driver);
         contactHelper = new ContactHelper(driver);
         baseUrl = "https://www.google.com/";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/");
         sessionHelper.login("admin", "secret");
     }
