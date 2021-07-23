@@ -13,7 +13,7 @@ public class DeleteGroup extends TestBase {
         public void testDeleteGroup() {
             app.getNavigationHelper().goToGroupPage();
             if (! app.getGroupHelper().isGroupExist()) {
-                app.getGroupHelper().createGroup(new GroupData ("124", "124", "124"));
+                app.getGroupHelper().createGroup(new GroupData (1, "124", "124", "123"));
             }
             List<GroupData> before = app.getGroupHelper().getGroupList();
             app.getNavigationHelper().goToGroupPage();

@@ -30,7 +30,7 @@ public class ContactHelper extends HelperBase {
     }
     public List<ContactData> getContactList() {
         List<ContactData> contact = new ArrayList<>();
-        List<WebElement> elements = driver.findElements(By.cssSelector("tr.odd"));
+        List<WebElement> elements = driver.findElements(By.cssSelector("tr.  and tr.odd"));
         for (WebElement element: elements) {
             String firstname = element.getText();
             ContactData contactData = new ContactData(firstname, null, null, null);
